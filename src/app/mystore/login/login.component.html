@@ -1,0 +1,18 @@
+<div>
+    <form #form class="w-[50vw] bg-slate-500 flex flex-col justify-center">
+        <input type="email" name="email" class="border-emerald-400 border-2" [(ngModel)]="user.email">
+        <input type="password" name="password" class="border-emerald-400 border-2" [(ngModel)]="user.password">
+        <button type="submit" (click)="login()">Login</button>
+
+        <p *ngIf="loginResponse != null">
+            Holla {{loginResponse.userName}}
+        </p>
+
+        <span *ngIf="loginResponse?.success == false">
+            {{loginResponse.message}}
+        </span>
+    </form>
+</div>
+
+<button class="border-2 rounded-sm bg-slate-900 text-white m-2 p-2" (click)="logout()">Logout</button>
+<p *ngIf="logoutResponse != null"> {{logoutResponse.message}} </p>

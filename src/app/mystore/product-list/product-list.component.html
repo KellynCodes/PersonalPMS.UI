@@ -1,0 +1,8 @@
+<div *ngFor="let prop of property; let i = index">
+    <h2> {{i}} </h2>
+    <p> {{prop.propertyId}} PropertyId</p>
+    <h1> {{prop.name }} Name</h1>
+    <h3> {{prop.price}} Price</h3>
+    <img [src]="prop.image" [alt]="prop.name">
+    <p> {{prop.isDeleted}} boolean</p>
+</div>
